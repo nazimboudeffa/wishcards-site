@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <title>Whish Cards</title>
+</head>
+<body>
+    <style>
+        canvas {
+            display : block;   
+            margin : auto;
+        }
+    </style>
+    <div id='card'></div>
+</body>
+
+<script type="text/javascript">
+
+const config = {
+    type: Phaser.AUTO,
+    width: 640,
+    height: 960,
+    scale: {
+        mode: Phaser.Scale.FIT
+    },
+    parent: 'card',
+    scene: {
+        preload: preload,
+        create: create
+    }
+};
+
+const game = new Phaser.Game(config);
+
+function preload() {
+
+    this.load.image('wish', 'assets/sprites/wish2.png');
+    this.load.image('sprite', 'assets/sprites/dudeism/dudeism.png');
+    this.load.image('happy', 'assets/sprites/dudeism/dudeism-logo.png');
+
+}
+
+function create() {
+
+    var wish = this.add.image(game.config.width / 2, (game.config.height / 2)-300, 'wish');
+    wish.setOrigin(0.5,0.5);
+    wish.scale = 0.5;
+    tween = this.tweens.add({
+        targets: wish,
+        scale: 1,
+        ease: 'Linear',
+        duration: 1000,
+        repeat: -1,
+        yoyo: true
+    });
+    var happy = this.add.image(game.config.width / 2, (game.config.height / 2)-100, 'happy');
+    happy.setOrigin(0.5,0.5);
+    tween = this.tweens.add({
+        targets: happy,
+        angle: {
+            from: -10,
+            to: 10
+        },
+        ease: 'Linear',
+        duration: 1000,
+        repeat: -1,
+        yoyo: true
+    });
+    var image = this.add.image(game.config.width / 2, (game.config.height / 2)+300, 'sprite');
+    image.setOrigin(0.5,0.5);
+    image.alpha = 0;
+    tween = this.tweens.add({
+        targets: image,
+        alpha: {
+            from: 0,
+            to: 1
+        },
+        ease: 'Linear',
+        duration: 1000,
+        repeat: -1,
+        yoyo: true
+    });
+
+}
+
+</script>
+
+</html>

@@ -20,6 +20,10 @@ app.get('/purnima',function(req,res){
   res.render('purnima');
 });
 
+app.get('/dude',function(req,res){
+  res.render('dude');
+});
+
 //port for heroku
 let port = process.env.PORT || 3002;
 
