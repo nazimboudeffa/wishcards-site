@@ -38,10 +38,42 @@ function preload() {
     this.load.image('wish', 'assets/sprites/wish2.png');
     this.load.image('sprite', 'assets/sprites/buddhism/bb3.png');
     this.load.image('happy', 'assets/sprites/buddhism/budha1.png');
+    this.load.atlas('flares', 'assets/particles/flares.png', 'assets/particles/flares.json');
 
 }
 
 function create() {
+
+    var particles = this.add.particles('flares');
+
+    var emitter1 = particles.createEmitter({
+        frame: 'blue',
+        x: 320,
+        y: (480+300)/2,
+        speed: 200,
+        blendMode: 'ADD',
+        lifespan: 1000
+    });
+
+    var emitter2 = particles.createEmitter({
+        frame: 'red',
+        x: 320,
+        y: (480+300)/2,
+        speed: 200,
+        scale: 0.5,
+        blendMode: 'ADD',
+        lifespan: 2000
+    });
+
+    var emitter3 = particles.createEmitter({
+        frame: 'yellow',
+        x: 320,
+        y: (480+300)/2,
+        speed: 200,
+        scale: { min: 0, max: 1 },
+        blendMode: 'ADD',
+        lifespan: 2500
+    });
 
     var wish = this.add.image(game.config.width / 2, (game.config.height / 2)-300, 'wish');
     wish.setOrigin(0.5,0.5);
