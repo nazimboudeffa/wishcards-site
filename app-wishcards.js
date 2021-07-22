@@ -21,8 +21,8 @@ app.get('/purnima',function(req,res){
 });
 
 //port for heroku
-let port = 3002;
+let port = process.env.PORT || 3002;
 
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port 3002!');
 });
