@@ -1,0 +1,30 @@
+{
+  "name": "wishcards-site",
+  "version": "1.0.0",
+  "description": " Very basic game example made with Phaser and Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazimboudeffa/wishcards-site.git"
+  },
+  "keywords": [
+    "Phaser",
+    "Node.js"
+  ],
+  "author": "Jerome Renaux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nazimboudeffa/wishcards-site/issues"
+  },
+  "homepage": "https://github.com/nazimboudeffa/wishcards-site#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

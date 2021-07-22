@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <title>Whish Cards</title>
+</head>
+<body>
+    <div id='card'></div>
+</body>
+
+<script type="text/javascript">
+
+const config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    scale: {
+        mode: Phaser.Scale.FIT
+    },
+    backgroundColor: '#2d2d2d',
+    parent: 'card',
+    scene: {
+        preload: preload,
+        create: create
+    }
+};
+
+const game = new Phaser.Game(config);
+
+function preload() {
+
+    this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
+    this.load.image('sprite', 'assets/sprites/islam/eid-adha1.png');
+
+}
+
+function create() {
+
+    var image = this.add.image(100, 300, 'sprite').setOrigin(0.5,0.5);
+
+    this.tweens.add({
+        targets: image,
+        x: 700,
+        duration: 3000,
+        ease: 'Power2',
+        yoyo: true,
+        delay: 1000
+    });
+
+    var textBox = this.rexUI.add.textBox({
+        x: 0,
+        y: 0,
+        // anchor: undefined,
+        // width: undefined,
+        // height: undefined,
+
+        orientation: 0,
+
+        space: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+
+            icon: 0,
+            text: 0,
+        },
+
+        // name: '',
+        // draggable: false,
+
+        // page: { maxLines: undefined },
+        // type: { speed: 333 }
+
+    });
+
+}
+
+</script>
+
+</html>
