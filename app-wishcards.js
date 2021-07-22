@@ -16,8 +16,12 @@ app.get('/adha',function(req,res){
   res.render('adha');
 });
 
+app.get('/purnima',function(req,res){
+  res.render('purnima');
+});
+
 //port for heroku
-let port = process.env.PORT || 3000;
+let port = 3002;
 
 app.listen(port, function () {
   console.log('Example app listening on port 3000!');
